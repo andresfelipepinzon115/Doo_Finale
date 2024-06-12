@@ -17,8 +17,8 @@ public final class BloqueEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "nombre", nullable = false, length = 100)
-	@Size(min = 5, max = 100, message = "El nombre debe tener entre 5 y 100 caracteres")
+	@Column(name = "nombre", nullable = false, length = 20)
+	@Size(min = 1, max = 20, message = "El nombre debe tener entre 1 y 20 caracteres")
 	private String nombre;
 
 	public BloqueEntity(final int id, final String nombre) {

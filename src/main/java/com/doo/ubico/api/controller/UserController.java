@@ -1,3 +1,4 @@
+
 package com.doo.ubico.api.controller;
 
 import com.doo.ubico.business.domain.TipoDocumento;
@@ -5,6 +6,7 @@ import com.doo.ubico.business.domain.User;
 import com.doo.ubico.business.usecase.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -40,8 +42,10 @@ public class UserController {
 		} catch (IllegalArgumentException e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
+			
 	}
-
+		
+	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestParam String correoElectronico, @RequestParam String password) {
 		try {
@@ -50,6 +54,10 @@ public class UserController {
 		} catch (IllegalArgumentException e) {
 			return ResponseEntity.status(401).body(e.getMessage());
 		}
+	
 	}
 
 }
+
+
+		
