@@ -13,6 +13,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+//prueba
         return new BCryptPasswordEncoder();
     }
 }
